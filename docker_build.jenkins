@@ -15,7 +15,7 @@ pipeline {
         stage("docker login") {
             steps {
                 echo " ============== docker login =================="
-                withCredentials([usernamePassword(credentialsId: 'dockerhub_semaev', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: 'aol4ik', usernameVariable: 'kiril.lysenko@gmail.com', passwordVariable: 'slep48bn11')]) {
                     sh """
                     docker login -u $USERNAME -p $PASSWORD
                     """
@@ -34,7 +34,7 @@ pipeline {
             steps {
                 echo " ============== start pushing image =================="
                 sh '''
-                docker push semaev/toolbox:latest
+                docker push aol4ik/toolbox:latest
                 '''
             }
         }
