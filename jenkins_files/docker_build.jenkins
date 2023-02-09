@@ -6,9 +6,7 @@ pipeline {
     agent { 
         label 'master'
         }
-    options {
-       
-    }
+    
     stages {
         stage("docker login") {
             steps {
