@@ -11,6 +11,14 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
     }
+    stage("Say Hello") {
+            steps {
+                echo " ============== start building image =================="
+                dir ('docker/toolbox') {
+		sh 'ls -la'
+                }
+            }
+        }
     stages {
         stage("docker login") {
             steps {
